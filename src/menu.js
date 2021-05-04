@@ -1,7 +1,7 @@
 const showMenu = () => {
-  const contentContainer = document.querySelector("#content");
+  const mainContainer = document.querySelector(".main-container");
 
-  contentContainer.innerHTML += "<h1>Menu</h1>";
+  mainContainer.innerHTML += "<h1>Menu</h1>";
 };
 
 module.exports = { showMenu };

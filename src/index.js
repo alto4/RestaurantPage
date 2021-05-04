@@ -16,6 +16,9 @@ const contactLink = document.querySelector('[data-link="contact"]');
 let links = [homeLink, menuLink, aboutLink, contactLink];
 
 function route() {
+  const mainContainer = document.querySelector(".main-container");
+
+  mainContainer.innerHTML = "";
   switch (activeLink) {
     case "home":
     case "":
@@ -37,20 +40,22 @@ route();
 showFooter();
 addLinkEvents();
 function addLinkEvents() {
+  document.body.addEventListener("keypress", () => {
+    alert("KEYPRESS DETECTED");
+    showMenu();
+  });
   // Add click events to change active links
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       links.forEach((link) => {
         link.style.backgroundColor = "#fff";
       });
-      alert("clicked" + e.target.getAttribute("data-link"));
       activeLink = e.target.getAttribute("data-link");
-      alert("ActiveLink set to " + activeLink);
       document.querySelector(
         `[data-link="${e.target.getAttribute("data-link")}"]`
-      ).style.backgroundColor = "red";
+      ).style.backgroundColor = "#ccc";
+      route();
+      addLinkEvents();
     });
-
-    route();
   });
 }

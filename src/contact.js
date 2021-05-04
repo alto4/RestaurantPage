@@ -1,7 +1,7 @@
 const showContact = () => {
-  const contentContainer = document.querySelector("#content");
+  const mainContainer = document.querySelector(".main-container");
 
-  contentContainer.innerHTML += "<h1>Contact</h1>";
+  mainContainer.innerHTML += "<h1>Contact</h1>";
 };
 
 module.exports = { showContact };

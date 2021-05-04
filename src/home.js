@@ -1,5 +1,5 @@
 const showHomepage = () => {
-  const contentContainer = document.querySelector("#content");
+  const mainContainer = document.querySelector(".main-container");
 
   // Generate hero section
   let heroContainer = document.createElement("div");
@@ -18,7 +18,7 @@ const showHomepage = () => {
 
   heroContainer.appendChild(leadParagraph);
   heroContainer.appendChild(menuButton);
-  contentContainer.appendChild(heroContainer);
+  mainContainer.appendChild(heroContainer);
 };
 
 module.exports = { showHomepage };

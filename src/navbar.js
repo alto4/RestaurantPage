@@ -28,6 +28,12 @@ const showNavbar = () => {
   navbar.appendChild(navItems);
 
   contentContainer.appendChild(navbar);
+
+  // Create main content container
+  let mainContainer = document.createElement("div");
+  mainContainer.classList += "main-container";
+  mainContainer.innerText = "HI";
+  contentContainer.appendChild(mainContainer);
 };
 
 module.exports = { showNavbar };
