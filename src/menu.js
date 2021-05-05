@@ -14,11 +14,18 @@ const menuItems = [
     price: "$8.99",
   },
   {
-    title: "Fries",
-    imageURL: "../images/fries.jpeg",
+    title: "Chicken Tenders and Fries",
+    imageURL: "../images/chicken.jpg",
     description:
-      "Top-quality Kennebec potatoes, sliced into medium thickness and dusted with sea salt and a special blend of seasonings. Served with house garlic aoili and spicy ketchup.",
-    price: "$4.99 | 6.99 | 8.99",
+      "Homemade chicken tenders breaded with Panko and served alongside our tasty chips, and your choice of honey mustard sauce, plum sauce, or spicy barbeque sauce.",
+    price: "$11.99",
+  },
+  {
+    title: "Poutine",
+    imageURL: "../images/poutine.jpg",
+    description:
+      "Top-quality Kennebec potatoes, sliced into medium thickness and served with Quebecois cheese curds and homemade beef gravy.",
+    price: "$6.99 | $8.99",
   },
   {
     title: "Chicken Tenders and Fries",
@@ -32,14 +39,7 @@ const menuItems = [
     imageURL: "../images/poutine.jpg",
     description:
       "Top-quality Kennebec potatoes, sliced into medium thickness and served with Quebecois cheese curds and homemade beef gravy.",
-    price: "6.99 | 8.99",
-  },
-  {
-    title: "Sausage",
-    imageURL: "../images/sausage.jpeg",
-    description:
-      "Traditional or Spicy Italian sausage link served on a 12-inch bun with all the fixings.",
-    price: "$7.99",
+    price: "$6.99 | $8.99",
   },
 ];
 
@@ -49,6 +49,9 @@ const showMenu = () => {
   pageHeading.innerText = "Menu";
 
   mainContainer.appendChild(pageHeading);
+
+  let menuContainer = document.createElement("div");
+  menuContainer.classList += "menu-container";
 
   menuItems.forEach((item) => {
     // Create menu item cards
@@ -77,8 +80,10 @@ const showMenu = () => {
     menuItemCard.appendChild(menuItemPrice);
 
     // Add card to menu items container
-    mainContainer.appendChild(menuItemCard);
+    menuContainer.appendChild(menuItemCard);
   });
+
+  mainContainer.appendChild(menuContainer);
 };
 
 module.exports = { showMenu };

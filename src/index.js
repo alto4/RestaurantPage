@@ -58,4 +58,12 @@ function addLinkEvents() {
       addLinkEvents();
     });
   });
+
+  if (activeLink === "home" || activeLink === "") {
+    const menuButton = document.querySelector(".btn");
+    menuButton.addEventListener("click", function () {
+      activeLink = "menu";
+      route();
+    });
+  }
 }

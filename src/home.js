@@ -1,3 +1,6 @@
+const { showMenu } = require("./menu");
+const { route } = require("./index");
+
 const showHomepage = () => {
   const mainContainer = document.querySelector(".main-container");
 
