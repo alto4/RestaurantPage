@@ -12,12 +12,12 @@ const homeLink = document.querySelector('[data-link="home"]');
 const menuLink = document.querySelector('[data-link="menu"]');
 const aboutLink = document.querySelector('[data-link="about"]');
 const contactLink = document.querySelector('[data-link="contact"]');
+const mainContainer = document.querySelector(".main-container");
 
 let links = [homeLink, menuLink, aboutLink, contactLink];
+let hasLoaded = false;
 
 function route() {
-  const mainContainer = document.querySelector(".main-container");
-
   mainContainer.innerHTML = "";
   switch (activeLink) {
     case "home":
@@ -40,10 +40,10 @@ route();
 showFooter();
 addLinkEvents();
 function addLinkEvents() {
-  document.body.addEventListener("keypress", () => {
-    alert("KEYPRESS DETECTED");
-    showMenu();
-  });
+  if (hasLoaded === true) {
+    document.body.removeEventListener("keypress", changePage);
+  }
+  document.body.addEventListener("keypress", changePage);
   // Add click events to change active links
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -66,4 +66,11 @@ function addLinkEvents() {
       route();
     });
   }
+}
+
+function changePage() {
+  alert("KEYPRESS DETECTED");
+  hasLoaded = true;
+  mainContainer.innerHTML = "";
+  showMenu();
 }
