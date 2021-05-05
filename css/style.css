@@ -119,3 +119,20 @@ footer i {
   font-weight: 700;
   font-size: 1.3rem;
 }
+
+/* Contact Styles */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 60px auto;
+}
+
+.contact-details {
+  margin: auto;
+}
+
+.contact-details p {
+  margin: .5rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+}

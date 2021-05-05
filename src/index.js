@@ -1,7 +1,6 @@
 import { showNavbar } from "./navbar";
 import { showHomepage } from "./home";
 import { showMenu } from "./menu";
-import { showAbout } from "./about";
 import { showContact } from "./contact";
 import { showFooter } from "./footer";
 
@@ -10,11 +9,10 @@ let activeLink = "";
 showNavbar();
 const homeLink = document.querySelector('[data-link="home"]');
 const menuLink = document.querySelector('[data-link="menu"]');
-const aboutLink = document.querySelector('[data-link="about"]');
 const contactLink = document.querySelector('[data-link="contact"]');
 const mainContainer = document.querySelector(".main-container");
 
-let links = [homeLink, menuLink, aboutLink, contactLink];
+let links = [homeLink, menuLink, contactLink];
 let hasLoaded = false;
 
 function route() {
@@ -26,9 +24,6 @@ function route() {
       break;
     case "menu":
       showMenu();
-      break;
-    case "about":
-      showAbout();
       break;
     case "contact":
       showContact();
@@ -69,7 +64,6 @@ function addLinkEvents() {
 }
 
 function changePage() {
-  alert("KEYPRESS DETECTED");
   hasLoaded = true;
   mainContainer.innerHTML = "";
   showMenu();

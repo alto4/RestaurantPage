@@ -12,16 +12,12 @@ const showNavbar = () => {
   let menuLink = document.createElement("li");
   menuLink.innerText = "Menu";
   menuLink.setAttribute("data-link", "menu");
-  let aboutLink = document.createElement("li");
-  aboutLink.innerText = "About";
-  aboutLink.setAttribute("data-link", "about");
   let contactLink = document.createElement("li");
   contactLink.innerText = "Contact";
   contactLink.setAttribute("data-link", "contact");
 
   navItems.appendChild(homeLink);
   navItems.appendChild(menuLink);
-  navItems.appendChild(aboutLink);
   navItems.appendChild(contactLink);
 
   navbar.appendChild(logo);
@@ -32,7 +28,6 @@ const showNavbar = () => {
   // Create main content container
   let mainContainer = document.createElement("div");
   mainContainer.classList += "main-container";
-  mainContainer.innerText = "HI";
   contentContainer.appendChild(mainContainer);
 };
 
