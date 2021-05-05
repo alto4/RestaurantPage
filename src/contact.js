@@ -36,6 +36,13 @@ const showContact = () => {
   // Contact form
   let contactForm = document.createElement("form");
   contactForm.classList.add("contact-form");
+  let contactFormHeading = document.createElement("h3");
+  contactFormHeading.innerText = "Send Us a Message";
+  let contactFormSubHeading = document.createElement("p");
+  contactFormSubHeading.innerText =
+    "We will get back to you ASAP. If you need to get in touch urgently, please give us a call.";
+  contactForm.appendChild(contactFormHeading);
+  contactForm.appendChild(contactFormSubHeading);
 
   // Name input
   let nameInputContainer = document.createElement("div");
@@ -92,6 +99,12 @@ const showContact = () => {
   messageInputContainer.appendChild(messageLabel);
   messageInputContainer.appendChild(messageInput);
   contactForm.appendChild(messageInputContainer);
+
+  // Send button
+  let sendButton = document.createElement("button");
+  sendButton.classList.add("btn-send");
+  sendButton.innerText = "Send";
+  contactForm.appendChild(sendButton);
 
   contactContainer.appendChild(contactForm);
 

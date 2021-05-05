@@ -136,3 +136,59 @@ footer i {
   font-weight: 600;
   font-size: 1.3rem;
 }
+
+.contact-form {
+  width: 650px;
+  margin: auto;
+  grid-column: span 2;
+  margin: 100px auto;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.contact-form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.contact-form p {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+.contact-form div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+}
+
+.contact-form label {
+  text-align: end;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.contact-form textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.btn-send {
+  display: block;
+  padding: 7px 50px;
+  outline: none;
+  border: none;
+  border-radius: 1000000px;
+  background: green;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 20px auto;
+}
+
+.btn-send:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
