@@ -233,6 +233,7 @@ footer i {
     display: block;
     text-align: center;
   }
+  
   nav h2 {
     padding: 1rem;
     font-size: 2rem;
@@ -241,6 +242,11 @@ footer i {
   .nav-links {
     margin: auto;
     display: block;
+  }
+
+  .nav-links li {
+    border: 1px solid #777;
+    margin: 1rem;
   }
 
 
