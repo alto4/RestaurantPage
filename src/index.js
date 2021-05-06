@@ -4,7 +4,7 @@ import { showMenu } from "./menu";
 import { showContact } from "./contact";
 import { showFooter } from "./footer";
 
-let activeLink = "";
+let activeLink = "home";
 
 showNavbar();
 const homeLink = document.querySelector('[data-link="home"]');
@@ -32,8 +32,10 @@ function route() {
 }
 
 route();
+highlightLinks();
 showFooter();
 addLinkEvents();
+
 function addLinkEvents() {
   if (hasLoaded === true) {
     document.body.removeEventListener("keypress", changePage);
@@ -42,15 +44,8 @@ function addLinkEvents() {
   // Add click events to change active links
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
-      links.forEach((link) => {
-        link.style.backgroundColor = "#fff";
-      });
       activeLink = e.target.getAttribute("data-link");
-      document.querySelector(
-        `[data-link="${e.target.getAttribute("data-link")}"]`
-      ).style.backgroundColor = "#ccc";
-      route();
-      addLinkEvents();
+      highlightLinks();
     });
   });
 
@@ -59,6 +54,7 @@ function addLinkEvents() {
     menuButton.addEventListener("click", function () {
       activeLink = "menu";
       route();
+      highlightLinks();
     });
   }
 }
@@ -66,5 +62,17 @@ function addLinkEvents() {
 function changePage() {
   hasLoaded = true;
   mainContainer.innerHTML = "";
-  showMenu();
+  activeLink = "menu";
+  route();
+  highlightLinks();
+}
+
+function highlightLinks() {
+  links.forEach((link) => {
+    link.style.backgroundColor = "#fff";
+  });
+  document.querySelector(`[data-link="${activeLink}"]`).style.backgroundColor =
+    "#ccc";
+  route();
+  addLinkEvents();
 }
