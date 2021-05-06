@@ -13,6 +13,7 @@ const contactLink = document.querySelector('[data-link="contact"]');
 const mainContainer = document.querySelector(".main-container");
 
 let links = [homeLink, menuLink, contactLink];
+let pages = ["home", "menu", "contact"];
 let hasLoaded = false;
 
 function route() {
@@ -35,12 +36,9 @@ route();
 highlightLinks();
 showFooter();
 addLinkEvents();
+addTabEvents();
 
 function addLinkEvents() {
-  if (hasLoaded === true) {
-    document.body.removeEventListener("keypress", changePage);
-  }
-  document.body.addEventListener("keypress", changePage);
   // Add click events to change active links
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -75,4 +73,25 @@ function highlightLinks() {
     "#ccc";
   route();
   addLinkEvents();
+}
+
+function addTabEvents() {
+  if (hasLoaded === true) {
+    document.body.removeEventListener("keydown", tabToNextPage);
+  }
+  document.body.addEventListener("keydown", function tabToNextPage(e) {
+    if (e.which === 9) {
+      let currentIndex = pages.indexOf(activeLink);
+      alert(
+        "tab key triggered, currently on page with index of" + currentIndex
+      );
+      if (currentIndex + 1 === pages.length) {
+        activeLink = pages[0];
+      } else {
+        activeLink = pages[currentIndex + 1];
+      }
+      route();
+      highlightLinks();
+    }
+  });
 }
