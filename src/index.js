@@ -82,9 +82,7 @@ function addTabEvents() {
   document.body.addEventListener("keydown", function tabToNextPage(e) {
     if (e.which === 9) {
       let currentIndex = pages.indexOf(activeLink);
-      alert(
-        "tab key triggered, currently on page with index of" + currentIndex
-      );
+
       if (currentIndex + 1 === pages.length) {
         activeLink = pages[0];
       } else {

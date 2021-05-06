@@ -14,7 +14,7 @@ const menuItems = [
     price: "$8.99",
   },
   {
-    title: "Chicken Tenders and Fries",
+    title: "Chicken Tenders",
     imageURL: "../images/chicken.jpg",
     description:
       "Homemade chicken tenders breaded with Panko and served alongside our tasty chips, and your choice of honey mustard sauce, plum sauce, or spicy barbeque sauce.",
@@ -28,7 +28,7 @@ const menuItems = [
     price: "$6.99 | $8.99",
   },
   {
-    title: "Chicken Tenders and Fries",
+    title: "Chicken Tenders",
     imageURL: "../images/chicken.jpg",
     description:
       "Homemade chicken tenders breaded with Panko and served alongside our tasty chips, and your choice of honey mustard sauce, plum sauce, or spicy barbeque sauce.",

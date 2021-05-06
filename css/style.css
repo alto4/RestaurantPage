@@ -158,6 +158,7 @@ footer i {
   padding: 1rem;
   font-size: 1.1rem;
 }
+
 .contact-form div {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -169,6 +170,14 @@ footer i {
   margin-right: 20px;
   font-weight: 600;
   font-size: 1.3rem;
+}
+
+.contact-form textarea,
+.contact-form input {
+  border-radius: 5px;
+  border: 1px solid #777;
+  font-size: 1rem;
+  padding: 7px
 }
 
 .contact-form textarea {
@@ -191,4 +200,67 @@ footer i {
 .btn-send:hover {
   cursor: pointer;
   transform: scale(1.01);
+}
+
+@media(max-width: 1200px) {
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 1000px) {
+  .contact-container {
+    display: block;
+  }
+
+  iframe {
+    display: block;
+    margin: 40px auto;
+    width: 75%;
+  }
+
+  .contact-details p {
+    margin: auto;
+    text-align: center;
+  }
+  footer {
+    justify-content: center;
+  }
+}
+
+@media(max-width: 680px) {
+  nav {
+    display: block;
+    text-align: center;
+  }
+  nav h2 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+ 
+  .nav-links {
+    margin: auto;
+    display: block;
+  }
+
+
+  .menu-container {
+    grid-template-columns: repeat(1, 1fr);
+  } 
+  
+  .contact-form {
+    width: 90%;
+  }
+  
+  .contact-form div {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .contact-form label {
+    text-align: left;
+    padding: 1rem 0;
+  }
+
 }
