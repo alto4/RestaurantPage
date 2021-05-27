@@ -21,7 +21,7 @@ nav {
 }
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./images/fryway-33.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../images/fryway-33.jpg') center/cover no-repeat;
   min-height: 82vh;
   image-rendering: -webkit-optimize-contrast;
   display: flex;
